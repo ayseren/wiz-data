@@ -1,0 +1,38 @@
+{
+  "name": "@script-wiz/wiz-data",
+  "version": "0.1.0",
+  "description": "Magic Wiz Data",
+  "scripts": {
+    "wp-umd": "npx webpack --mode production --config webpack.config.umd.js",
+    "wp-umd-dev": "npx webpack --mode development --config webpack.config.umd.js",
+    "wp-common": "npx webpack --mode production --config webpack.config.js",
+    "wp-common-dev": "npx webpack --mode development --config webpack.config.js",
+    "wp": "yarn wp-umd && yarn wp-common",
+    "wpdev": "yarn wp-umd-dev && yarn wp-common-dev",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/jest": "^26.0.23",
+    "babel-loader": "^8.0.6",
+    "jest": "^26.6.3",
+    "ts-loader": "^8.0.18",
+    "typescript": "^4.2.3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bit-matrix/wiz-data.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bit-matrix/wiz-data/issues"
+  },
+  "homepage": "https://github.com/bit-matrix/wiz-data#readme",
+  "dependencies": {}
+}
