@@ -1,6 +1,6 @@
 import { MAX_INTEGER } from "../const";
 import { numberTestData } from "./data/number";
-import WizData from "../index";
+import { WizData } from "../WizData";
 
 test("WizData class: number to wizData object test", () => {
   numberTestData.forEach((d) => {
