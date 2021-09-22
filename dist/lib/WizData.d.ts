@@ -10,4 +10,5 @@ export declare class WizData {
     static fromBin(bin: string): WizData;
     static fromNumber(number: number): WizData;
     static fromText(text: string): WizData;
+    static fromBytes(bytes: Uint8Array): WizData;
 }
