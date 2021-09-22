@@ -16,10 +16,8 @@ export class WizData {
   number?: number;
   text?: string;
 
-  private constructor(hex?: string, bin?: string, number?: number, text?: string) {
+  private constructor(hex?: string, bin?: string, number?: number, text?: string, bytes?: Uint8Array) {
     let inputVal: string | number = "";
-    let outputVal: string | number = "";
-
     let bytesVal: Uint8Array = new Uint8Array([]);
     let binVal: string = "";
     let hexVal: string = "";
@@ -69,6 +67,13 @@ export class WizData {
       textVal = text; // TODO set to stack cache
     }
 
+    // fromText
+    else if (bytes !== undefined) {
+      bytesVal = bytes;
+      hexVal = bytesToHex(bytes);
+      binVal = bytesToBin(bytesVal);
+    }
+
     // set props
     this.input = inputVal;
     this.bytes = bytesVal;
@@ -97,5 +102,9 @@ export class WizData {
 
   public static fromText(text: string): WizData {
     return new WizData(undefined, undefined, undefined, text);
+  }
+
+  public static fromBytes(bytes: Uint8Array): WizData {
+    return new WizData(undefined, undefined, undefined, undefined, bytes);
   }
 }
