@@ -72,6 +72,7 @@ export class WizData {
       bytesVal = bytes;
       hexVal = bytesToHex(bytes);
       binVal = bytesToBin(bytesVal);
+      inputVal = bytes.join(",");
     }
 
     // set props
