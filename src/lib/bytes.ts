@@ -1,7 +1,7 @@
 import { hexBoundaries, hexLE } from "./hex";
 import { numberIsValid } from "./number";
 
-const validByte = (byte: number): boolean => 0 <= byte || byte <= 255;
+const validByte = (byte: number): boolean => 0 <= byte && byte <= 255;
 
 // const bytesLE = (bytes: Uint8Array): Uint8Array => bytes.reverse();
 
