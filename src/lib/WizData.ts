@@ -7,7 +7,6 @@ import { stringToBytes } from "./string";
 
 export class WizData {
   input: string | number;
-  // output: string | number;
 
   bytes: Uint8Array;
   bin: string;
@@ -24,8 +23,6 @@ export class WizData {
 
     let numberVal: number | undefined = undefined;
     let textVal: string | undefined = undefined;
-
-    // const emptyBytePrefix: string = "0x";
 
     // fromHex
     if (hex !== undefined) {
@@ -64,7 +61,7 @@ export class WizData {
       binVal = bytesToBin(bytesVal);
       hexVal = bytesToHex(bytesVal);
       numberVal = bytesToNumber(bytesVal);
-      textVal = text; // TODO set to stack cache
+      textVal = text;
     }
 
     // fromText
@@ -82,11 +79,6 @@ export class WizData {
     this.hex = hexVal;
     if (numberVal !== undefined && -MAX_INTEGER <= numberVal && numberVal <= MAX_INTEGER) this.number = numberVal;
     this.text = textVal;
-
-    /* if (this.text !== undefined) outputVal = this.text;
-    else if (this.number !== undefined) outputVal = this.number;
-    else outputVal = emptyBytePrefix + this.hex;
-    this.output = outputVal; */
   }
 
   public static fromHex(hex: string): WizData {
