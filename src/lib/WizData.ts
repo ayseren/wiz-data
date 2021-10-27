@@ -6,7 +6,7 @@ import { numberToBytes } from "./number";
 import { stringToBytes } from "./string";
 
 export class WizData {
-  input: string | number;
+  input: string | number | Uint8Array;
 
   bytes: Uint8Array;
   bin: string;
@@ -16,7 +16,7 @@ export class WizData {
   text?: string;
 
   private constructor(hex?: string, bin?: string, number?: number, text?: string, bytes?: Uint8Array) {
-    let inputVal: string | number = "";
+    let inputVal: string | number | Uint8Array = "";
     let bytesVal: Uint8Array = new Uint8Array([]);
     let binVal: string = "";
     let hexVal: string = "";
@@ -26,7 +26,7 @@ export class WizData {
 
     // fromHex
     if (hex !== undefined) {
-      inputVal = hex;
+      inputVal = "0x" + hex;
       bytesVal = hexToBytes(hex);
       binVal = bytesToBin(bytesVal);
       hexVal = hex;
@@ -36,7 +36,7 @@ export class WizData {
 
     // fromBin
     else if (bin !== undefined) {
-      inputVal = bin;
+      inputVal = "0b" + bin;
       bytesVal = binToBytes(bin);
       binVal = bin;
       hexVal = bytesToHex(bytesVal);
