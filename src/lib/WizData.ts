@@ -64,12 +64,14 @@ export class WizData {
       textVal = text;
     }
 
-    // fromText
+    // fromBytes
     else if (bytes !== undefined) {
+      inputVal = bytes;
       bytesVal = bytes;
-      hexVal = bytesToHex(bytes);
       binVal = bytesToBin(bytesVal);
-      inputVal = bytes.join(",");
+      hexVal = bytesToHex(bytes);
+      numberVal = bytesToNumber(bytesVal);
+      // textVal = bytesToString(bytesVal); // TODO get from stack cache
     }
 
     // set props
