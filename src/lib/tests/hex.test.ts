@@ -7,7 +7,7 @@ numberTestData.forEach((d, i) => {
   test("numberTestData: hex to wizData object test:" + i, () => {
     const wizData: WizData = WizData.fromHex(d.hexValue);
 
-    expect(wizData.input).toBe(d.hexValue);
+    expect(wizData.input.toString().substr(2)).toBe(d.hexValue);
 
     expect(wizData.bytes.length).toBe(d.byteLength);
     expect(wizData.bin.length / 8).toBe(d.byteLength);
@@ -32,7 +32,7 @@ textTestData.forEach((d, i) => {
   test("textTestData: hex to wizData object test:" + i, () => {
     const wizData: WizData = WizData.fromHex(d.hexValue);
 
-    expect(wizData.input).toBe(d.hexValue);
+    expect(wizData.input.toString().substr(2)).toBe(d.hexValue);
 
     expect(wizData.bytes.length).toBe(d.byteLength);
     expect(wizData.bin.length / 8).toBe(d.byteLength);

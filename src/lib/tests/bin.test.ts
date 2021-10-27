@@ -7,7 +7,7 @@ numberTestData.forEach((d, i) => {
   test("numberTestData: number to wizData object test:" + i, () => {
     const wizData: WizData = WizData.fromBin(d.binValue);
 
-    expect(wizData.input).toBe(d.binValue);
+    expect(wizData.input.toString().substr(2)).toBe(d.binValue);
 
     expect(wizData.bytes.length).toBe(d.byteLength);
     expect(wizData.bin.length / 8).toBe(d.byteLength);
@@ -32,7 +32,7 @@ textTestData.forEach((d, i) => {
   test("textTestData: number to wizData object test:" + i, () => {
     const wizData: WizData = WizData.fromBin(d.binValue);
 
-    expect(wizData.input).toBe(d.binValue);
+    expect(wizData.input.toString().substr(2)).toBe(d.binValue);
 
     expect(wizData.bytes.length).toBe(d.byteLength);
     expect(wizData.bin.length / 8).toBe(d.byteLength);
