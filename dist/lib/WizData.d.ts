@@ -1,5 +1,5 @@
 export declare class WizData {
-    input: string | number;
+    input: string | number | Uint8Array;
     bytes: Uint8Array;
     bin: string;
     hex: string;
