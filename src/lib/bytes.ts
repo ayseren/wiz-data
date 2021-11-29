@@ -60,7 +60,7 @@ export const bytesToString = (bytes: Uint8Array): string => {
 
 export const bytesToNumber = (bytes: Uint8Array): number | undefined => {
   if (bytes.length == 0) return 0;
-  if (4 < bytes.length) return;
+  if (8 < bytes.length) return;
 
   const hex = bytesToHex(bytes);
   if (!numberIsValid(hex, bytes.length)) return;
