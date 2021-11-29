@@ -1,7 +1,7 @@
 export const numberTestData = [
-  { inputNumber: -2147483650, numberValue: false, byteLength: 5, hexValue: "0200008080", binValue: "1000000010000000000000000000000000000010" },
-  { inputNumber: -2147483649, numberValue: false, byteLength: 5, hexValue: "0100008080", binValue: "1000000010000000000000000000000000000001" },
-  { inputNumber: -2147483648, numberValue: false, byteLength: 5, hexValue: "0000008080", binValue: "1000000010000000000000000000000000000000" },
+  { inputNumber: -2147483650, numberValue: true, byteLength: 5, hexValue: "0200008080", binValue: "1000000010000000000000000000000000000010" },
+  { inputNumber: -2147483649, numberValue: true, byteLength: 5, hexValue: "0100008080", binValue: "1000000010000000000000000000000000000001" },
+  { inputNumber: -2147483648, numberValue: true, byteLength: 5, hexValue: "0000008080", binValue: "1000000010000000000000000000000000000000" },
 
   // MIN_INTEGER
   { inputNumber: -2147483647, numberValue: true, byteLength: 4, hexValue: "ffffffff", binValue: "11111111111111111111111111111111" },
@@ -63,7 +63,31 @@ export const numberTestData = [
   { inputNumber: 2147483647, numberValue: true, byteLength: 4, hexValue: "ffffff7f", binValue: "01111111111111111111111111111111" },
   // MAX_INTEGER
 
-  { inputNumber: 2147483648, numberValue: false, byteLength: 5, hexValue: "0000008000", binValue: "0000000010000000000000000000000000000000" },
-  { inputNumber: 2147483649, numberValue: false, byteLength: 5, hexValue: "0100008000", binValue: "0000000010000000000000000000000000000001" },
-  { inputNumber: 2147483650, numberValue: false, byteLength: 5, hexValue: "0200008000", binValue: "0000000010000000000000000000000000000010" },
+  { inputNumber: 2147483648, numberValue: true, byteLength: 5, hexValue: "0000008000", binValue: "0000000010000000000000000000000000000000" },
+  { inputNumber: 2147483649, numberValue: true, byteLength: 5, hexValue: "0100008000", binValue: "0000000010000000000000000000000000000001" },
+  { inputNumber: 2147483650, numberValue: true, byteLength: 5, hexValue: "0200008000", binValue: "0000000010000000000000000000000000000010" },
+
+  { inputNumber: 1099520016384, numberValue: true, byteLength: 6, hexValue: "000080000001", binValue: "000000010000000000000000100000000000000000000000" },
+  { inputNumber: 2199031644160, numberValue: true, byteLength: 6, hexValue: "000080000002", binValue: "000000100000000000000000100000000000000000000000" },
+
+  { inputNumber: 281477124194304, numberValue: true, byteLength: 7, hexValue: "00000080000001", binValue: "00000001000000000000000010000000000000000000000000000000" },
+  { inputNumber: 562952100904960, numberValue: true, byteLength: 7, hexValue: "00000080000002", binValue: "00000010000000000000000010000000000000000000000000000000" },
+
+  { inputNumber: 72058143793741824, numberValue: true, byteLength: 8, hexValue: "0000000080000001", binValue: "0000000100000000000000001000000000000000000000000000000000000000" },
+  { inputNumber: 144115737831669760, numberValue: true, byteLength: 8, hexValue: "0000000080000002", binValue: "0000001000000000000000001000000000000000000000000000000000000000" },
+
+  {
+    inputNumber: 18446884811197906944,
+    numberValue: false,
+    byteLength: 9,
+    hexValue: "000000000080000001",
+    binValue: "000000010000000000000000100000000000000000000000000000000000000000000000",
+  },
+  {
+    inputNumber: 36893628884907458560,
+    numberValue: false,
+    byteLength: 9,
+    hexValue: "000000000080000002",
+    binValue: "000000100000000000000000100000000000000000000000000000000000000000000000",
+  },
 ];
