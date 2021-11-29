@@ -50,6 +50,7 @@ export const numberToBytes = (value: number): Uint8Array => {
   const byteLength: number = numberByteLength(value);
   const inputNumber: number = value < 0 ? Math.pow(2, 8 * byteLength - 1) - value : value;
   const uint8NumberBytes: Uint8Array = uint8NumberToBytes(inputNumber);
+
   return resizeBytes(uint8NumberBytes, byteLength);
 };
 
@@ -75,6 +76,27 @@ export const numberIsValid = (hex: string, byteLength: number): boolean => {
   // 0x00000001 <= n <= 0x007fffff
   // 0x80000000 <= n <= 0x807fffff
   if (byteLength === 4) if ((0x00000001 <= numberHex && numberHex <= 0x007fffff) || (0x80000000 <= numberHex && numberHex <= 0x807fffff)) return false;
+
+  // 5 byte
+  // 0x0000000001 <= n <= 0x007fffffff
+  // 0x8000000000 <= n <= 0x807fffffff
+  if (byteLength === 5) if ((0x0000000001 <= numberHex && numberHex <= 0x007fffffff) || (0x8000000000 <= numberHex && numberHex <= 0x807fffffff)) return false;
+
+  // 6 byte
+  // 0x000000000001 <= n <= 0x007fffffffff
+  // 0x800000000000 <= n <= 0x807fffffffff
+  if (byteLength === 6) if ((0x000000000001 <= numberHex && numberHex <= 0x007fffffffff) || (0x800000000000 <= numberHex && numberHex <= 0x807fffffffff)) return false;
+
+  // 7 byte
+  // 0x00000000000001 <= n <= 0x007fffffffffff
+  // 0x80000000000000 <= n <= 0x807fffffffffff
+  if (byteLength === 7) if ((0x00000000000001 <= numberHex && numberHex <= 0x007fffffffffff) || (0x80000000000000 <= numberHex && numberHex <= 0x807fffffffffff)) return false;
+
+  // 8 byte
+  // 0x0000000000000001 <= n <= 0x007fffffffffffff
+  // 0x8000000000000000 <= n <= 0x807fffffffffffff
+  if (byteLength === 8)
+    if ((0x0000000000000001 <= numberHex && numberHex <= 0x007fffffffffffff) || (0x8000000000000000 <= numberHex && numberHex <= 0x807fffffffffffff)) return false;
 
   return true;
 };
