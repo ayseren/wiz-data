@@ -9,6 +9,7 @@ export const hexLE = (hex: string): string => bytesToHex(hexToBytes(hex).reverse
 const hexToHexBytes = (hex: string): string[] => {
   if (!validHex(hex)) throw "hexToHexBytes: invalid hex string";
   const matches: RegExpMatchArray | null = hex.match(/.{1,2}/g);
+
   if (matches === null) return [];
   return matches.map((match: string) => match);
 };
@@ -36,7 +37,7 @@ export const hexBoundaries = (bytesLength: number): NumberBoundries | undefined 
   const b1 = Math.pow(2, 8 * bytesLength - 9);
   const b2 = Math.pow(2, 8 * bytesLength - 1);
 
-  if (0 < bytesLength && bytesLength < 5) {
+  if (0 < bytesLength && bytesLength < 9) {
     return {
       minPos: b1,
       maxPos: b2 - 1,
