@@ -1,5 +1,5 @@
 import { WizData } from "./WizData";
-import { mockDataBin, mockDataHex, mockDataNumber, mockDataText } from "./tests/data/WizData.data";
+import { mockDataBin, mockDataByte, mockDataHex, mockDataNumber, mockDataText } from "./tests/data/WizData.data";
 
 test("Initial hex input test", () => {
   mockDataHex.forEach((item) => {
@@ -58,15 +58,17 @@ test("initial text input test", () => {
 });
 
 test("initial byte input test", () => {
-  const byteInput = [4,221];
-  const byteInputUInt8Array = new Uint8Array(byteInput);
-  const byteData = WizData.fromBytes(byteInputUInt8Array);
-
-  expect(byteData.bin).toEqual("1101110100000100");
-  expect(byteData.input).toEqual(byteInputUInt8Array);
-  expect(byteData.bytes).toEqual(byteInputUInt8Array);
-  expect(byteData.hex).toEqual("04dd");
-  expect(byteData.number).toEqual(-23812);
-  expect(byteData.text).toEqual(undefined);
+  mockDataByte.forEach((item) => {
+    const byteInput = item.input;
+    const byteInputUInt8Array = new Uint8Array(byteInput);
+    const byteData = WizData.fromBytes(byteInputUInt8Array);
+  
+    expect(byteData.bin).toEqual(item.bin);
+    expect(byteData.input).toEqual(byteInputUInt8Array);
+    expect(byteData.bytes).toEqual(byteInputUInt8Array);
+    expect(byteData.hex).toEqual(item.hex);
+    expect(byteData.number).toEqual(item.number);
+    expect(byteData.text).toEqual(undefined);
+  });
 });
 

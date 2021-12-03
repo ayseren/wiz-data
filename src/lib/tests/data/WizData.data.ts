@@ -80,3 +80,23 @@ export const mockDataText = [{
     byteLength: 4,
     text: "masa"
 }];
+
+export const mockDataByte = [{
+    input: [4,221],
+    bin: "1101110100000100",
+    hex: "04dd",
+    number: -23812,
+    byteLength: 2
+},{
+    input: [70,85,2],
+    bin: "000000100101010101000110",
+    hex: "465502",
+    number: 152902,
+    byteLength: 3
+},{
+    input: [13,101,219,130],
+    bin: "10000010110110110110010100001101",
+    hex: "0d65db82",
+    number: -47932685,
+    byteLength: 4
+}];
