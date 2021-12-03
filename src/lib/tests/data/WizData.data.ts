@@ -18,6 +18,26 @@ export const mockDataHex = [{
     byteLength: 3
 }];
 
+export const mockDataBin = [{
+    input: "11101010",
+    bin: "11101010",
+    hex: "ea",
+    number: -106,
+    byteLength: 1
+},{
+    input: "11000101",
+    bin: "11000101",
+    hex: "c5",
+    number: -69,
+    byteLength: 1
+},{
+    input: "01011100",
+    bin: "01011100",
+    hex: "5c",
+    number: 92,
+    byteLength: 1
+}];
+
 export const mockDataNumber = [{
     input: 354,
     bin: "0000000101100010",
