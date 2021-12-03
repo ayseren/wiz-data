@@ -57,3 +57,26 @@ export const mockDataNumber = [{
     number: 89953247,
     byteLength: 4
 }];
+
+export const mockDataText = [{
+    input: "ayse",
+    bin: "01100101011100110111100101100001",
+    hex: "61797365",
+    number: 1702066529,
+    byteLength: 4,
+    text: "ayse"
+},{
+    input: "book",
+    bin: "01101011011011110110111101100010",
+    hex: "626f6f6b",
+    number: 1802465122,
+    byteLength: 4,
+    text: "book"
+},{
+    input: "masa",
+    bin: "01100001011100110110000101101101",
+    hex: "6d617361",
+    number: 1634951533,
+    byteLength: 4,
+    text: "masa"
+}];

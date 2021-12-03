@@ -1,5 +1,5 @@
 import { WizData } from "./WizData";
-import { mockDataBin, mockDataHex, mockDataNumber } from "./tests/data/WizData.data";
+import { mockDataBin, mockDataHex, mockDataNumber, mockDataText } from "./tests/data/WizData.data";
 
 test("Initial hex input test", () => {
   mockDataHex.forEach((item) => {
@@ -44,15 +44,17 @@ test("initial number input test", () => {
 });
 
 test("initial text input test", () => {
-  const textInput = "ayse";
-  const textData = WizData.fromText(textInput);
-  
-  expect(textData.bin).toEqual("01100101011100110111100101100001");
-  expect(textData.input).toEqual(textInput);
-  expect(textData.bytes.length).toEqual(4);
-  expect(textData.hex).toEqual("61797365");
-  expect(textData.number).toEqual(1702066529);
-  expect(textData.text).toEqual(textInput);
+  mockDataText.forEach((item) => {
+    const textInput = item.input;
+    const textData = WizData.fromText(textInput);
+    
+    expect(textData.bin).toEqual(item.bin);
+    expect(textData.input).toEqual(textInput);
+    expect(textData.bytes.length).toEqual(item.byteLength);
+    expect(textData.hex).toEqual(item.hex);
+    expect(textData.number).toEqual(item.number);
+    expect(textData.text).toEqual(textInput);
+  });
 });
 
 test("initial byte input test", () => {
